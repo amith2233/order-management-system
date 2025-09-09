@@ -1,4 +1,4 @@
-package com.example.inventoryservice.model;
+package com.example.productservice.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -6,21 +6,22 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "inventory")
-@Data
+@Table(name="products")
 @NoArgsConstructor
 @AllArgsConstructor
-public class Inventory {
-
+@Data
+public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false,updatable = false)
-    private Long productId;
+    private String name;
 
-    @Column(nullable = false)
-    private Integer quantity;
+    private String description;
 
+    private Double price;
+
+    private String category;
+
+    private String company;
 }
-

@@ -1,0 +1,19 @@
+services:
+  db:
+    image: postgres:latest
+    container_name: postgres_db
+    restart: unless-stopped
+
+    environment:
+      POSTGRES_USER: amith2233
+      POSTGRES_PASSWORD: Amith$223300
+      POSTGRES_DB: order-management-db
+    ports:
+      - "5432:5432"
+    #volume mapping to Container path where PostgreSQL stores its database files
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+#persistent storage managed by docker
+volumes:
+  db_data:
