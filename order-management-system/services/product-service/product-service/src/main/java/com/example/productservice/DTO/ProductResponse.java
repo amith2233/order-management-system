@@ -2,8 +2,10 @@ package com.example.productservice.DTO;
 
 import com.example.productservice.model.Product;
 
+import java.util.UUID;
+
 public record ProductResponse (
-    Long id,
+    UUID productId,
     String name,
     String description,
     String price,
